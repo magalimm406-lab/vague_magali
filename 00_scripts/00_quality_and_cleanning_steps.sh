@@ -3,10 +3,10 @@
 RAW_DIR=/home/vanton/magali/vague_magali/01_raw_data_sed/
 
 mkdir –p 02_raw_data_quality
-RAW_QC_DIR=/home/vanton/magali/02_raw_data_quality/
+RAW_QC_DIR=/home/vanton/magali/vague_magali/02_raw_data_quality/
 
 mkdir –p 03_cleaned_data
-CLEAN_DIR=/home/vanton/magali/03_cleaned_data/
+CLEAN_DIR=/home/vanton/magali/vague_magali/03_cleaned_data/
 
 mkdir –p 04_cleaned_data_quality
 
@@ -50,8 +50,8 @@ mv *.paired.fastq.gz paired/
 
 ################################## 3. QC des données nettoyées
 
-CLEAN_DIR=/home/vanton/magali/03_cleaned_data/paired
-CLEAN_QC_DIR=/home/vanton/magali/04_cleaned_data_quality
+CLEAN_DIR=/home/vanton/magali/vague_magali/03_cleaned_data/paired
+CLEAN_QC_DIR=/home/vanton/magali/vague_magali/04_cleaned_data_quality
 
 mkdir -p "$CLEAN_QC_DIR"
 
