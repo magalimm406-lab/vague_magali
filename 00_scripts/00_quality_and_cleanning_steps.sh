@@ -42,12 +42,6 @@ for R1 in "$RAW_DIR"/*_R1_001.fastq.gz; do
 done
 
 
-# regrouper les paired data
-cd 03_cleaned_data
-mkdir -p paired
-
-mv *.paired.fastq.gz paired/
-
 ################################## 3. QC des données nettoyées
 
 CLEAN_DIR=/home/vanton/magali/vague_magali/03_cleaned_data/paired
@@ -60,3 +54,17 @@ fastqc -t "$THREADS" \
    "$CLEAN_DIR"/*fastq.gz
 
 multiqc "$CLEAN_QC_DIR" -o "$CLEAN_QC_DIR"
+
+########### 
+mkdir -p unpaired #il faut commencer par les unpaired
+mv *.unpaired* unpaired/
+cd unpaired
+conda activate bioinfo 
+multiqc .
+
+cd ..
+mkdir -p paired
+mv *.paired* paired/
+cd paired
+multiqc .
+
