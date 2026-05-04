@@ -32,7 +32,7 @@ mkdir -p "$CLEAN_DIR"
 for R1 in "$RAW_DIR"/*_R1_001.fastq.gz; do
     SAMPLE=$(basename "$R1" _R1_001.fastq.gz)
     R2="$RAW_DIR/${SAMPLE}_R2_001.fastq.gz"
-    trimmomatic PE -threads "$THREADS" -phred33 \
+    trimmomatic PE -Xmx60G -threads 8 -phred33 \
         "$R1" \
         "$R2" \
         "$CLEAN_DIR/${SAMPLE}_R1_001.paired.fastq.gz" \
