@@ -12,6 +12,8 @@ CLEAN_DIR=/home/vanton/magali/vague_magali/03_cleaned_data/
 
 mkdir –p 04_cleaned_data_quality
 
+ADAPTERFILE=/home/vanton/magali/vague_magali/smallRNA_adapters.fa
+
 THREADS=8
 
 ml load Py10/Bio_info_env/3.10 #ou conda activate bioinfo
@@ -32,14 +34,14 @@ mkdir -p "$CLEAN_DIR"
 for R1 in "$RAW_DIR"/*_R1_001.fastq.gz; do
     SAMPLE=$(basename "$R1" _R1_001.fastq.gz)
     R2="$RAW_DIR/${SAMPLE}_R2_001.fastq.gz"
-    trimmomatic PE -Xmx60G -threads 8 -phred33 \
+    trimmomatic PE -threads "$THREADS" -phred33 \
         "$R1" \
         "$R2" \
         "$CLEAN_DIR/${SAMPLE}_R1_001.paired.fastq.gz" \
         "$CLEAN_DIR/${SAMPLE}_R1_001.unpaired.fastq.gz" \
         "$CLEAN_DIR/${SAMPLE}_R2_001.paired.fastq.gz" \
         "$CLEAN_DIR/${SAMPLE}_R2_001.unpaired.fastq.gz" \
-        ILLUMINACLIP:smallRNA_adapters.fa:2:30:10 \
+        ILLUMINACLIP:"$ADAPTERFILE":2:30:10 \
         LEADING:5 TRAILING:5 SLIDINGWINDOW:4:20 MINLEN:36 AVGQUAL:20
 done
 
