@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 ########################
 # 0. Activation QIIME2
 ########################
@@ -16,7 +18,7 @@ conda activate qiime2-amplicon-2026.1
 PROJECT_DIR="/home/vanton/magali/vague_magali"
 
 # Dossier contenant les fastq nettoyés (outputs de Trimmomatic)
-CLEAN_DIR="${PROJECT_DIR}/03_cleaned_data/paired"
+CLEAN_DIR="${PROJECT_DIR}/03_cleaned_data"
 
 # Dossier où l’on va mettre les fichiers de base de QIIME2 (manifest, metadata)
 DB_DIR="${PROJECT_DIR}/98_databasefiles"
