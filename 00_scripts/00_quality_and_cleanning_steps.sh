@@ -38,7 +38,6 @@ for R1 in "$RAW_DIR"/*_R1_001.fastq.gz; do
         "$CLEAN_DIR/${SAMPLE}_R2_001.paired.fastq.gz" \
         "$CLEAN_DIR/${SAMPLE}_R2_001.unpaired.fastq.gz" \
         ILLUMINACLIP:TruSeq3-PE-2.fa:2:30:10 \
-        LEADING:5 TRAILING:5 SLIDINGWINDOW:4:20 MINLEN:36 AVGQUAL:20
 done
 
 
