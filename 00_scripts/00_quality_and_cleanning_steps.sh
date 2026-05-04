@@ -44,7 +44,7 @@ done
 
 ################################## 3. QC des données nettoyées
 
-CLEAN_DIR=/home/vanton/magali/vague_magali/03_cleaned_data/paired
+CLEAN_DIR=/home/vanton/magali/vague_magali/03_cleaned_data
 CLEAN_QC_DIR=/home/vanton/magali/vague_magali/04_cleaned_data_quality
 
 mkdir -p "$CLEAN_QC_DIR"
