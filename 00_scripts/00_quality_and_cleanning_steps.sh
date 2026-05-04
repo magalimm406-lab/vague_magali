@@ -2,6 +2,8 @@
 
 RAW_DIR=/home/vanton/magali/vague_magali/01_raw_data_sed/
 
+cd /home/vanton/magali/vague_magali
+
 mkdir –p 02_raw_data_quality
 RAW_QC_DIR=/home/vanton/magali/vague_magali/02_raw_data_quality/
 
