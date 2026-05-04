@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
-
 ########################
 # 0. Activation QIIME2
 ########################
