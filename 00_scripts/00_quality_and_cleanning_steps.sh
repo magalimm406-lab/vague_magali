@@ -56,6 +56,7 @@ fastqc -t "$THREADS" \
 multiqc "$CLEAN_QC_DIR" -o "$CLEAN_QC_DIR"
 
 ########### 
+cd /home/vanton/magali/vague_magali/04_cleaned_data_quality
 mkdir -p unpaired #il faut commencer par les unpaired
 mv *.unpaired* unpaired/
 cd unpaired
